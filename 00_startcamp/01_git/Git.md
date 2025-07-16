@@ -61,7 +61,7 @@ git push -u origin master
 ```
 이제 진짜 그 원격에 upstream 이라는 방법으로 origin master 가 작업한 내용을 보냈다.
 
-##### 원격 저장소에 저장한 작업물을 다른 컴퓨터에 이어서 작업하려면
+##### 원격 저장소에 저장한 작업물을 다른 컴퓨터에 이어서 작업하려면 git bash 를 열어서
 ```bash
 git clone 리포지토리_주소
 ```
