@@ -11,10 +11,13 @@
     - 버전 (commit) 이력과 파일들이 영구적으로 저장되는 영역. 모든 버전과 변경이력이 기록됨
     - 다른 사람들과 함께 작업한 최종 저장소
 
-### 해당 버전 작성자 지정
+### 해당 버전 작성자 지정. 이 컴퓨터 사용자이면 (--global). 
+
+프로젝트 폴더별로 설정하려면, 해당 디렉토리 에서 --global 플래그 사용 제외하고 입력.
+
 ```bash
-git config --global user.email "본인 이메일 주소"
-git config --global user.name "본인 이름"
+git config --global user.email "본인_이메일_주소"
+git config --global user.name "본인_이름"
 ```
 ##### 해당 버전 작성자 확인 혹은 변경할 수 있는 파일 여는 명령
 ```bash
@@ -28,11 +31,18 @@ code ~/.gitconfig
 2. Add modified files to staging area: `git add 파일_경로`
 
 3. `git status` 하면, 
-- staging area에 있는 파일은 Changes to be commited: 밑에 나열되고
-- working directory 에 있는 파일들은 Untracked files: 밑에 나열됨
-- 변경했는데 staging area 에 넣디 않는 파일은 Changes not staged: 밑에 나열됨
-- stagng area 에 있는 파일중에 working directory 로 제외시키려면 `git restore --staged 파일_이름`
+    - staging area에 있는 파일은 Changes to be commited: 밑에 나열되고
+    - working directory 에 있는 파일들은 Untracked files: 밑에 나열됨
+    - 변경했는데 staging area 에 넣디 않는 파일은 Changes not staged: 밑에 나열됨
+    - stagng area 에 있는 파일중에 working directory 로 제외시키려면 `git restore --staged 파일_이름`
 
-4. Staging area 에 있는 파일들을 Repository 에 최종 추가 하려면: `git commit -m "commit_이름"` 
+4. Staging area 에 있는 파일들을 master branch 로 Repository 에 최종 추가 하려면: `git commit -m "commit_이름"` 
 
 5. commit 해서 repository 에 합친 내역을 보려면 `git log` 라고 치면 commit_이름 들이 나열됨
+
+### 원격 저장소
+- GitLab
+  - private. 집단 생성 가능. 구성원만 들어갈 수 있음. repository member 가 아니면 집단 구성원들끼리도 repository 를 볼 수 없음. 
+- GitHub
+  - public
+- BitBucket
