@@ -29,6 +29,7 @@ code ~/.gitconfig
 1. initializing: study 라는 새 폴더를 생성해서 그 안에서 git bash의 command 로 `git init` 라고 치면, 파일 탐색기의 보기 옵션에서 숨김파일 표시가 되게 되어있으면  .git 이라는 폴더가 보임
 
 2. Add modified files to staging area: `git add 파일_경로`
+    - 현재 작업 디렉토리에 있는 모든 변경사항을 staging area 에 넣으려면 `git add .`
 
 3. `git status` 하면, 
     - staging area에 있는 파일은 Changes to be commited: 밑에 나열되고
@@ -46,3 +47,22 @@ code ~/.gitconfig
 - GitHub
   - public
 - BitBucket
+
+##### 이미 만든 local 저장소 내용을 원격 저장소에 새로 만든 비어있는 repository 에 보내려면
+```bash
+git remote add origin 리포지토리_주소
+``` 
+그 리포지토리를 origin 이라고 부르겠다는거다.
+
+주의: github이 master 를 main 으로 바꿈에 따라 `git branch -m main` 도 중간에 입력해야 한다.
+
+```bash 
+git push -u origin master
+```
+이제 진짜 그 원격에 upstream 이라는 방법으로 origin master 가 작업한 내용을 보냈다.
+
+##### 원격 저장소에 저장한 작업물을 다른 컴퓨터에 이어서 작업하려면
+```bash
+git clone 리포지토리_주소
+```
+해서 그 컴퓨터에 모든 작업물을 다운받아서 변경작업을 수행하고 다시 push 하면 된다.
